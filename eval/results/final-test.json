@@ -1,0 +1,694 @@
+{
+  "config": {
+    "name": "final",
+    "time": "2026-10-19T16:37:30",
+    "split": "test",
+    "questions": 10,
+    "k": 5,
+    "store": "memory",
+    "chunking": "250/40",
+    "embed_model": "BAAI/bge-small-en-v1.5",
+    "retriever": "hybrid",
+    "prefix": false,
+    "rerank": 0,
+    "prompt": "v1",
+    "agent": null,
+    "candidates": 20,
+    "llm": "qwen3:14b",
+    "judge": true,
+    "git": null
+  },
+  "summary": {
+    "questions": 10,
+    "answerable": 8,
+    "unanswerable": 2,
+    "recall_at_k_page": 0.875,
+    "mrr": 0.8125,
+    "recall_at_k_all_parts": 0.875,
+    "recall_at_k_evidence": 0.875,
+    "retrieval_misses": [
+      "q19"
+    ],
+    "correct": 0.75,
+    "faithful": 1,
+    "citation_validity": 1,
+    "answers_with_all_citations_valid": 1,
+    "abstained_correctly": 1,
+    "wrongly_refused": 0,
+    "latency_p50_s": 5.656181300000753,
+    "latency_p95_s": 6.82334229999924,
+    "avg_input_tokens": 1905.5,
+    "avg_output_tokens": 137.5,
+    "wrong": [
+      "q08",
+      "q19"
+    ],
+    "unfaithful": [],
+    "answered_unanswerable": [
+      "u09"
+    ]
+  },
+  "questions": [
+    {
+      "id": "q04",
+      "question": "Can I use the standard mileage rate if my business uses five cars at the same time?",
+      "answerable_expected": true,
+      "expected": "No. You can't use the standard mileage rate if you use five or more cars at the same time, such as in fleet operations; you may be able to deduct actual expenses instead.",
+      "pages": [
+        "p334-p35",
+        "p463-p20"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p463-p21-c1",
+          "page": "p463-p21",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p463-p20-c4",
+          "page": "p463-p20",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p334-p35-c3",
+          "page": "p334-p35",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p463-p21-c2",
+          "page": "p463-p21",
+          "score": 0.031
+        },
+        {
+          "chunk_id": "p463-p20-c3",
+          "page": "p463-p20",
+          "score": 0.0299
+        }
+      ],
+      "first_relevant_rank": 2,
+      "page_hit": true,
+      "reciprocal_rank": 0.5,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "retrieve_s": 0.020671199999924283,
+        "generate_s": 2.1882574000001114,
+        "total_s": 2.2089286000000357
+      },
+      "answerable_predicted": true,
+      "answer": "No, you cannot use the standard mileage rate if your business uses five cars at the same time. According to the source, if you own or lease five or more cars that are used for business at the same time, you can't use the standard mileage rate for the business use of any car.",
+      "citations": [
+        {
+          "chunk_id": "p463-p20-c4",
+          "quote": "If you own or lease five or more cars that are used for business at the same time, you can\u2019t use the standard mileage rate for the business use of any car.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 1791,
+        "output_tokens": 143
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states that the standard mileage rate cannot be used for five or more cars at the same time, and this is directly supported by the cited quote."
+      }
+    },
+    {
+      "id": "q08",
+      "question": "Does a $3 pen with my company name printed on it count toward the business gift limit?",
+      "answerable_expected": true,
+      "expected": "No. An item costing $4 or less with your name clearly and permanently imprinted, one of many identical items you widely distribute, isn't considered a gift for the $25 limit.",
+      "pages": [
+        "p463-p17"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p463-p17-c2",
+          "page": "p463-p17",
+          "score": 0.0325
+        },
+        {
+          "chunk_id": "p463-p17-c1",
+          "page": "p463-p17",
+          "score": 0.0323
+        },
+        {
+          "chunk_id": "p463-p16-c4",
+          "page": "p463-p16",
+          "score": 0.0304
+        },
+        {
+          "chunk_id": "p463-p15-c2",
+          "page": "p463-p15",
+          "score": 0.0291
+        },
+        {
+          "chunk_id": "p17-p58-c7",
+          "page": "p17-p58",
+          "score": 0.0288
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "retrieve_s": 0.020117600000048697,
+        "generate_s": 6.546176599999853,
+        "total_s": 6.566294199999902
+      },
+      "answerable_predicted": true,
+      "answer": "Yes, a $3 pen with your company name printed on it may count toward the business gift limit. According to the source, an item that costs $4 or less and has your name clearly and permanently imprinted on the gift, and is one of a number of identical items you widely distribute, is not considered a gift for purposes of the $25 limit. However, the pen must be one of a number of identical items you widely distribute.",
+      "citations": [
+        {
+          "chunk_id": "p463-p17-c2",
+          "quote": "1. An item that costs $4 or less and: a. Has your name clearly and permanently imprinted on the gift, and b. Is one of a number of identical items you widely distribute. Examples include pens, desk sets, and plastic bags and cases.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 1785,
+        "output_tokens": 193
+      },
+      "judge": {
+        "correct": false,
+        "faithful": true,
+        "reason": "The system answer incorrectly states that the pen may count toward the business gift limit, whereas the expected answer correctly states that it does not."
+      }
+    },
+    {
+      "id": "q13",
+      "question": "What does the regular use test for a home office require?",
+      "answerable_expected": true,
+      "expected": "You must use a specific area of your home for business on a regular (continuing) basis; incidental or occasional business use isn't regular use.",
+      "pages": [
+        "p334-p41",
+        "p587-p3"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p587-p3-c2",
+          "page": "p587-p3",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p334-p41-c3",
+          "page": "p334-p41",
+          "score": 0.031
+        },
+        {
+          "chunk_id": "p587-p2-c4",
+          "page": "p587-p2",
+          "score": 0.0302
+        },
+        {
+          "chunk_id": "p334-p41-c2",
+          "page": "p334-p41",
+          "score": 0.0299
+        },
+        {
+          "chunk_id": "p587-p5-c4",
+          "page": "p587-p5",
+          "score": 0.0297
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "retrieve_s": 0.017880500000501343,
+        "generate_s": 5.982023900000058,
+        "total_s": 5.99990440000056
+      },
+      "answerable_predicted": true,
+      "answer": "To qualify under the regular use test, you must use a specific area of your home for business on a regular basis. Incidental or occasional business use is not regular use. You must consider all facts and circumstances in determining whether your use is on a regular basis.",
+      "citations": [
+        {
+          "chunk_id": "p334-p41-c3",
+          "quote": "To qualify under the regular use test, you must use a specific area of your home for business on a continuing basis. You do not meet the test if your business use of the area is only occasional or incidental, even if you do not use that area for any other purpose.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 1664,
+        "output_tokens": 157
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer accurately reflects the expected answer and is fully supported by the cited quote, which emphasizes regular (continuing) business use of a specific area and excludes incidental or occasional use."
+      }
+    },
+    {
+      "id": "q19",
+      "question": "What is the maximum section 179 deduction for 2025?",
+      "answerable_expected": true,
+      "expected": "$2,500,000, reduced by the amount by which section 179 property placed in service exceeds $4,000,000.",
+      "pages": [
+        "p334-p36",
+        "p463-p2",
+        "p463-p23"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p946-p1-c1",
+          "page": "p946-p1",
+          "score": 0.0325
+        },
+        {
+          "chunk_id": "p463-p30-c1",
+          "page": "p463-p30",
+          "score": 0.0308
+        },
+        {
+          "chunk_id": "p946-p18-c1",
+          "page": "p946-p18",
+          "score": 0.0306
+        },
+        {
+          "chunk_id": "p946-p20-c5",
+          "page": "p946-p20",
+          "score": 0.0296
+        },
+        {
+          "chunk_id": "p334-p4-c3",
+          "page": "p334-p4",
+          "score": 0.0293
+        }
+      ],
+      "first_relevant_rank": null,
+      "page_hit": false,
+      "reciprocal_rank": 0.0,
+      "all_groups_hit": false,
+      "evidence_hit": false,
+      "timings": {
+        "retrieve_s": 0.014242799999919953,
+        "generate_s": 5.855992600000718,
+        "total_s": 5.870235400000638
+      },
+      "answerable_predicted": true,
+      "answer": "The maximum section 179 deduction for 2025 is $2,500,000.",
+      "citations": [
+        {
+          "chunk_id": "p946-p1-c1",
+          "quote": "For tax years beginning in 2025, the maximum section 179 expense deduction is $2,500,000.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        },
+        {
+          "chunk_id": "p334-p4-c3",
+          "quote": "Beginning in 2025, the maximum section 179 expense deduction is $2.5 million.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 2245,
+        "output_tokens": 153
+      },
+      "judge": {
+        "correct": false,
+        "faithful": true,
+        "reason": "The system answer does not mention the reduction based on the amount of section 179 property placed in service exceeding $4,000,000, which is part of the expected answer."
+      }
+    },
+    {
+      "id": "q24",
+      "question": "Under the half-year convention, what percentage of a 5-year property's basis is depreciated in the first year?",
+      "answerable_expected": true,
+      "expected": "20% (20.00%); for 7-year property it's 14.29%.",
+      "pages": [
+        "p587-p17",
+        "p946-p71"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p587-p17-c2",
+          "page": "p587-p17",
+          "score": 0.0309
+        },
+        {
+          "chunk_id": "p946-p39-c3",
+          "page": "p946-p39",
+          "score": 0.0308
+        },
+        {
+          "chunk_id": "p946-p45-c5",
+          "page": "p946-p45",
+          "score": 0.0306
+        },
+        {
+          "chunk_id": "p946-p41-c1",
+          "page": "p946-p41",
+          "score": 0.0297
+        },
+        {
+          "chunk_id": "p946-p41-c4",
+          "page": "p946-p41",
+          "score": 0.0293
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "retrieve_s": 0.021135400000275695,
+        "generate_s": 5.7461515999993935,
+        "total_s": 5.767286999999669
+      },
+      "answerable_predicted": true,
+      "answer": "Under the half-year convention, 20.00% of a 5-year property's basis is depreciated in the first year.",
+      "citations": [
+        {
+          "chunk_id": "p587-p17-c2",
+          "quote": "MACRS Percentage Table for 5- and 7-Year Property Using Half-Year Convention Table 4. Recovery Year 5-Year Property 7-Year Property 1 20.00% 14.29%",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 1966,
+        "output_tokens": 124
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states that 20.00% of a 5-year property's basis is depreciated in the first year under the half-year convention, and this is supported by the cited quote."
+      }
+    },
+    {
+      "id": "q29",
+      "question": "How do statutory employees report their wages and expenses?",
+      "answerable_expected": true,
+      "expected": "On Schedule C (Form 1040); a statutory employee has box 13 checked on Form W-2.",
+      "pages": [
+        "p334-p3"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p334-p3-c2",
+          "page": "p334-p3",
+          "score": 0.0325
+        },
+        {
+          "chunk_id": "p463-p41-c1",
+          "page": "p463-p41",
+          "score": 0.0303
+        },
+        {
+          "chunk_id": "p463-p41-c2",
+          "page": "p463-p41",
+          "score": 0.0303
+        },
+        {
+          "chunk_id": "p463-p41-c3",
+          "page": "p463-p41",
+          "score": 0.0291
+        },
+        {
+          "chunk_id": "p463-p42-c3",
+          "page": "p463-p42",
+          "score": 0.0282
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "retrieve_s": 0.013723099999879196,
+        "generate_s": 5.370759499999622,
+        "total_s": 5.384482599999501
+      },
+      "answerable_predicted": true,
+      "answer": "Statutory employees report their wages and expenses using Schedule C (Form 1040).",
+      "citations": [
+        {
+          "chunk_id": "p334-p3-c2",
+          "quote": "Statutory employees use Schedule C (Form 1040) to report their wages and expenses.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 2009,
+        "output_tokens": 88
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states that statutory employees use Schedule C (Form 1040) to report their wages and expenses, which is supported by the cited quote."
+      }
+    },
+    {
+      "id": "q33",
+      "question": "What is the 2025 standard deduction for a single filer?",
+      "answerable_expected": true,
+      "expected": "$15,750.",
+      "pages": [
+        "p17-p3",
+        "p17-p97"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p3-c1",
+          "page": "p17-p3",
+          "score": 0.0318
+        },
+        {
+          "chunk_id": "p17-p94-c2",
+          "page": "p17-p94",
+          "score": 0.0299
+        },
+        {
+          "chunk_id": "p17-p95-c3",
+          "page": "p17-p95",
+          "score": 0.0294
+        },
+        {
+          "chunk_id": "p17-p4-c3",
+          "page": "p17-p4",
+          "score": 0.0294
+        },
+        {
+          "chunk_id": "p17-p3-c2",
+          "page": "p17-p3",
+          "score": 0.0292
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "retrieve_s": 0.0183565000006638,
+        "generate_s": 5.6378248000000895,
+        "total_s": 5.656181300000753
+      },
+      "answerable_predicted": true,
+      "answer": "The 2025 standard deduction for a single filer is $15,750.",
+      "citations": [
+        {
+          "chunk_id": "p17-p3-c2",
+          "quote": "\u2022 Single or Married filing separately\u2014$15,750; \u2022 Married filing jointly or Qualifying surviving spouse\u2014$31,500; and \u2022 Head of household\u2014$23,625.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 2096,
+        "output_tokens": 115
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the 2025 standard deduction for a single filer as $15,750, which matches the expected answer and is supported by the cited quote."
+      }
+    },
+    {
+      "id": "q38",
+      "question": "Is jury duty pay taxable?",
+      "answerable_expected": true,
+      "expected": "Yes, it must be included in income (Schedule 1, line 8h); if you gave it to your employer, you can deduct that amount as an adjustment.",
+      "pages": [
+        "p17-p78"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p78-c3",
+          "page": "p17-p78",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p17-p78-c4",
+          "page": "p17-p78",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p17-p48-c2",
+          "page": "p17-p48",
+          "score": 0.0308
+        },
+        {
+          "chunk_id": "p17-p54-c7",
+          "page": "p17-p54",
+          "score": 0.0159
+        },
+        {
+          "chunk_id": "p334-p44-c2",
+          "page": "p334-p44",
+          "score": 0.0156
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "retrieve_s": 0.011011699999471602,
+        "generate_s": 6.812330599999768,
+        "total_s": 6.82334229999924
+      },
+      "answerable_predicted": true,
+      "answer": "Yes, jury duty pay you receive must be included in your income on Schedule 1 (Form 1040), line 8h. If you gave any of your jury duty pay to your employer because your employer continued to pay you while you served jury duty, include the amount you gave your employer as an income adjustment on Schedule 1 (Form 1040), line 24a, and see the instructions there.",
+      "citations": [
+        {
+          "chunk_id": "p17-p78-c3",
+          "quote": "Jury duty. Jury duty pay you receive must be included in your income on Schedule 1 (Form 1040), line 8h. If you gave any of your jury duty pay to your employer because your employer continued to pay you while you served jury duty, include the amount you gave your employer as an income adjustment on Schedule 1 (Form 1040), line 24a, and see the instructions there.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 1586,
+        "output_tokens": 229
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states that jury duty pay is taxable and includes the same details about including it on Schedule 1, line 8h, and adjusting for payments given to the employer, all supported by the cited quote."
+      }
+    },
+    {
+      "id": "u05",
+      "question": "What is the 2025 federal estate tax exemption amount?",
+      "answerable_expected": false,
+      "expected": "Not covered by these publications.",
+      "pages": [],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p4-c5",
+          "page": "p17-p4",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p17-p41-c2",
+          "page": "p17-p41",
+          "score": 0.0288
+        },
+        {
+          "chunk_id": "p17-p100-c6",
+          "page": "p17-p100",
+          "score": 0.0281
+        },
+        {
+          "chunk_id": "p17-p9-c5",
+          "page": "p17-p9",
+          "score": 0.0164
+        },
+        {
+          "chunk_id": "p17-p41-c1",
+          "page": "p17-p41",
+          "score": 0.0164
+        }
+      ],
+      "timings": {
+        "retrieve_s": 0.0167076999996425,
+        "generate_s": 4.4447251999999935,
+        "total_s": 4.461432899999636
+      },
+      "answerable_predicted": false,
+      "answer": "The provided sources do not mention the 2025 federal estate tax exemption amount.",
+      "citations": [],
+      "usage": {
+        "input_tokens": 2110,
+        "output_tokens": 34
+      }
+    },
+    {
+      "id": "u09",
+      "question": "Do I need to collect sales tax on items I sell on Etsy to customers in Texas?",
+      "answerable_expected": false,
+      "expected": "Not covered by these publications.",
+      "pages": [],
+      "retrieved": [
+        {
+          "chunk_id": "p334-p31-c2",
+          "page": "p334-p31",
+          "score": 0.0323
+        },
+        {
+          "chunk_id": "p334-p28-c3",
+          "page": "p334-p28",
+          "score": 0.0301
+        },
+        {
+          "chunk_id": "p334-p40-c3",
+          "page": "p334-p40",
+          "score": 0.0295
+        },
+        {
+          "chunk_id": "p334-p25-c4",
+          "page": "p334-p25",
+          "score": 0.0281
+        },
+        {
+          "chunk_id": "p17-p99-c4",
+          "page": "p17-p99",
+          "score": 0.0275
+        }
+      ],
+      "timings": {
+        "retrieve_s": 0.018810900000062247,
+        "generate_s": 2.086048500000288,
+        "total_s": 2.1048594000003504
+      },
+      "answerable_predicted": true,
+      "answer": "Yes, if you sell items on Etsy to customers in Texas, you need to collect sales tax on those items. According to the source, if you collect state and local sales taxes imposed on you as the seller of goods or services from the buyer, you must include the amount collected in gross receipts. This applies to sales tax collected from buyers in Texas.",
+      "citations": [
+        {
+          "chunk_id": "p334-p31-c2",
+          "quote": "If you collect state and local sales taxes imposed on you as the seller of goods or services from the buyer, you must include the amount collected in gross receipts.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 1803,
+        "output_tokens": 139
+      }
+    }
+  ]
+}

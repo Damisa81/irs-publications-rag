@@ -1,0 +1,3183 @@
+{
+  "config": {
+    "name": "agent-k5",
+    "time": "2026-10-19T16:32:37",
+    "split": "dev",
+    "questions": 40,
+    "k": 5,
+    "store": "memory",
+    "chunking": "250/40",
+    "embed_model": "BAAI/bge-small-en-v1.5",
+    "retriever": "hybrid",
+    "prefix": false,
+    "rerank": 0,
+    "prompt": "v1",
+    "agent": {
+      "max_searches": 3,
+      "k_per_search": 5
+    },
+    "candidates": 20,
+    "llm": "qwen3:14b",
+    "judge": true,
+    "git": null
+  },
+  "summary": {
+    "questions": 40,
+    "answerable": 32,
+    "unanswerable": 8,
+    "recall_at_k_page": 0.9375,
+    "mrr": 0.7145833333333333,
+    "recall_at_k_all_parts": 0.9375,
+    "recall_at_k_evidence": 0.78125,
+    "retrieval_misses": [
+      "q02",
+      "q15"
+    ],
+    "correct": 0.8125,
+    "faithful": 1,
+    "citation_validity": 0.975609756097561,
+    "answers_with_all_citations_valid": 0.9666666666666667,
+    "abstained_correctly": 8,
+    "wrongly_refused": 2,
+    "latency_p50_s": 10.53052690000004,
+    "latency_p95_s": 12.813272999999754,
+    "avg_input_tokens": 3961.75,
+    "avg_output_tokens": 167.9,
+    "wrong": [
+      "q02",
+      "q07",
+      "q11",
+      "q14",
+      "q15",
+      "q30"
+    ],
+    "unfaithful": [],
+    "answered_unanswerable": [],
+    "avg_searches": 1,
+    "searches_histogram": {
+      "1": 40
+    },
+    "stop_reasons": {
+      "done": 32,
+      "no_search": 8
+    },
+    "avg_chunks_given": 5
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "question": "What is the standard mileage rate for business use of a car in 2025?",
+      "answerable_expected": true,
+      "expected": "70 cents ($0.70) per mile.",
+      "pages": [
+        "p334-p35",
+        "p463-p1",
+        "p463-p20",
+        "p463-p34",
+        "p463-p44",
+        "p463-p45",
+        "p463-p46"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p463-p34-c3",
+          "page": "p463-p34",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p463-p44-c5",
+          "page": "p463-p44",
+          "score": 0.0294
+        },
+        {
+          "chunk_id": "p334-p5-c1",
+          "page": "p334-p5",
+          "score": 0.0288
+        },
+        {
+          "chunk_id": "p463-p20-c4",
+          "page": "p463-p20",
+          "score": 0.0286
+        },
+        {
+          "chunk_id": "p463-p25-c3",
+          "page": "p463-p25",
+          "score": 0.0274
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.796656299999995,
+        "generate_s": 5.648879500000476,
+        "total_s": 10.44553580000047
+      },
+      "searches": [
+        {
+          "query": "standard mileage rate for business use of a car in 2025",
+          "chunk_ids": [
+            "p463-p34-c3",
+            "p463-p44-c5",
+            "p334-p5-c1",
+            "p463-p20-c4",
+            "p463-p25-c3"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "The standard mileage rate for the business use of a car in 2025 is 70 cents ($0.70) per mile.",
+      "citations": [
+        {
+          "chunk_id": "p463-p44-c5",
+          "quote": "For 2025, the standard mileage rate for the cost of operating your car for business use is 70 cents ($0.70) per mile.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4569,
+        "output_tokens": 149
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the standard mileage rate for 2025 as 70 cents per mile, which matches the expected answer and is directly supported by the cited quote."
+      }
+    },
+    {
+      "id": "q02",
+      "question": "How much can I deduct for business gifts I give to a client?",
+      "answerable_expected": true,
+      "expected": "No more than $25 per person per year for gifts given directly or indirectly.",
+      "pages": [
+        "p463-p16"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p463-p17-c1",
+          "page": "p463-p17",
+          "score": 0.0311
+        },
+        {
+          "chunk_id": "p463-p14-c2",
+          "page": "p463-p14",
+          "score": 0.0295
+        },
+        {
+          "chunk_id": "p463-p6-c2",
+          "page": "p463-p6",
+          "score": 0.0294
+        },
+        {
+          "chunk_id": "p463-p47-c4",
+          "page": "p463-p47",
+          "score": 0.0291
+        },
+        {
+          "chunk_id": "p463-p47-c2",
+          "page": "p463-p47",
+          "score": 0.0284
+        }
+      ],
+      "first_relevant_rank": null,
+      "page_hit": false,
+      "reciprocal_rank": 0.0,
+      "all_groups_hit": false,
+      "evidence_hit": false,
+      "timings": {
+        "research_s": 4.621787299999596,
+        "generate_s": 5.763486900000316,
+        "total_s": 10.385274199999913
+      },
+      "searches": [
+        {
+          "query": "deduct business gifts to client",
+          "chunk_ids": [
+            "p463-p17-c1",
+            "p463-p14-c2",
+            "p463-p6-c2",
+            "p463-p47-c4",
+            "p463-p47-c2"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "You can generally deduct up to $25 per gift for business gifts given to a client. This limit applies to each gift, and the total deduction is calculated based on the number of gifts given.",
+      "citations": [
+        {
+          "chunk_id": "p463-p17-c1",
+          "quote": "You and your spouse can deduct a total of $75 ($25 limit \u00d7 3) for the gift baskets.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4261,
+        "output_tokens": 139
+      },
+      "judge": {
+        "correct": false,
+        "faithful": true,
+        "reason": "The system answer incorrectly states the limit is $25 per gift, whereas the expected answer correctly states the limit is $25 per person per year."
+      }
+    },
+    {
+      "id": "q03",
+      "question": "What percentage of business meal costs can I deduct?",
+      "answerable_expected": true,
+      "expected": "Generally 50% of the cost (the 50% limit), if the meal isn't lavish or extravagant.",
+      "pages": [
+        "p17-p71",
+        "p334-p5",
+        "p463-p7",
+        "p463-p13",
+        "p463-p14"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p587-p13-c5",
+          "page": "p587-p13",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p463-p15-c1",
+          "page": "p463-p15",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p463-p7-c2",
+          "page": "p463-p7",
+          "score": 0.031
+        },
+        {
+          "chunk_id": "p334-p41-c1",
+          "page": "p334-p41",
+          "score": 0.0308
+        },
+        {
+          "chunk_id": "p587-p14-c3",
+          "page": "p587-p14",
+          "score": 0.0288
+        }
+      ],
+      "first_relevant_rank": 3,
+      "page_hit": true,
+      "reciprocal_rank": 0.3333333333333333,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.6494486999999936,
+        "generate_s": 5.5168103999994855,
+        "total_s": 10.166259099999479
+      },
+      "searches": [
+        {
+          "query": "percentage of business meal costs can I deduct",
+          "chunk_ids": [
+            "p587-p13-c5",
+            "p463-p15-c1",
+            "p463-p7-c2",
+            "p334-p41-c1",
+            "p587-p14-c3"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "In general, you can deduct only 50% of your business-related meal expenses, unless an exception applies.",
+      "citations": [
+        {
+          "chunk_id": "p463-p15-c1",
+          "quote": "In general, you can deduct only 50% of your business-related meal expenses, unless an exception applies.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4075,
+        "output_tokens": 122
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the 50% deduction limit and is supported by the cited quote."
+      }
+    },
+    {
+      "id": "q05",
+      "question": "If I use the standard mileage rate in 2025, what is the rate, and can I also deduct parking fees and tolls?",
+      "answerable_expected": true,
+      "expected": "70 cents per mile; and yes, business-related parking fees and tolls are deductible in addition (but not parking at your regular place of work, which is commuting).",
+      "pages": [
+        "p334-p35",
+        "p463-p1",
+        "p463-p20",
+        "p463-p21",
+        "p463-p34",
+        "p463-p44",
+        "p463-p45",
+        "p463-p46"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p334-p35-c4",
+          "page": "p334-p35",
+          "score": 0.0303
+        },
+        {
+          "chunk_id": "p334-p35-c3",
+          "page": "p334-p35",
+          "score": 0.0301
+        },
+        {
+          "chunk_id": "p463-p49-c3",
+          "page": "p463-p49",
+          "score": 0.0301
+        },
+        {
+          "chunk_id": "p463-p34-c3",
+          "page": "p463-p34",
+          "score": 0.0296
+        },
+        {
+          "chunk_id": "p463-p1-c2",
+          "page": "p463-p1",
+          "score": 0.0292
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.879543600000034,
+        "generate_s": 7.08168410000053,
+        "total_s": 11.961227700000563
+      },
+      "searches": [
+        {
+          "query": "standard mileage rate for 2025 and deduction of parking fees and tolls",
+          "chunk_ids": [
+            "p334-p35-c4",
+            "p334-p35-c3",
+            "p463-p49-c3",
+            "p463-p34-c3",
+            "p463-p1-c2"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "In 2025, the standard mileage rate for the cost of operating your car for business use is 70 cents ($0.70) per mile. In addition to using the standard mileage rate, you can deduct any business-related parking fees and tolls. (Parking fees you pay to park your car at your place of work are nondeductible commuting expenses.)",
+      "citations": [
+        {
+          "chunk_id": "p463-p1-c2",
+          "quote": "For 2025, the standard mileage rate for the cost of operating your car for business use is 70 cents ($0.70) per mile.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        },
+        {
+          "chunk_id": "p334-p35-c4",
+          "quote": "In addition to using the standard mileage rate, you can deduct any business -related parking fees and tolls.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4980,
+        "output_tokens": 244
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the 2025 standard mileage rate as 70 cents per mile and accurately explains that business-related parking fees and tolls are deductible, excluding commuting expenses, as supported by the cited quotes."
+      }
+    },
+    {
+      "id": "q06",
+      "question": "Where is my tax home for travel expense purposes?",
+      "answerable_expected": true,
+      "expected": "Generally your regular place of business or post of duty, regardless of where you keep your family home; it includes the entire city or general area.",
+      "pages": [
+        "p334-p35",
+        "p334-p40",
+        "p463-p3"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p463-p3-c2",
+          "page": "p463-p3",
+          "score": 0.0325
+        },
+        {
+          "chunk_id": "p334-p40-c4",
+          "page": "p334-p40",
+          "score": 0.0323
+        },
+        {
+          "chunk_id": "p463-p3-c4",
+          "page": "p463-p3",
+          "score": 0.0318
+        },
+        {
+          "chunk_id": "p463-p6-c1",
+          "page": "p463-p6",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p463-p3-c1",
+          "page": "p463-p3",
+          "score": 0.0303
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.611886099999538,
+        "generate_s": 5.98261040000034,
+        "total_s": 10.594496499999877
+      },
+      "searches": [
+        {
+          "query": "tax home for travel expense purposes",
+          "chunk_ids": [
+            "p463-p3-c2",
+            "p334-p40-c4",
+            "p463-p3-c4",
+            "p463-p6-c1",
+            "p463-p3-c1"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "Your tax home for travel expense purposes is generally your regular place of business or post of duty, regardless of where you maintain your family home. It includes the entire city or general area in which your business or work is located.",
+      "citations": [
+        {
+          "chunk_id": "p463-p3-c4",
+          "quote": "Generally, your tax home is your regular place of business or post of duty, regardless of where you maintain your family home. It includes the entire city or general area in which your business or work is located.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4029,
+        "output_tokens": 160
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer accurately reflects the expected answer and is fully supported by the cited quote."
+      }
+    },
+    {
+      "id": "q07",
+      "question": "Do I need a receipt for a $50 business expense that isn't lodging?",
+      "answerable_expected": true,
+      "expected": "No documentary evidence (such as a receipt) is needed if the expense, other than lodging, is less than $75, though you still need the other records.",
+      "pages": [
+        "p463-p35"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p463-p35-c3",
+          "page": "p463-p35",
+          "score": 0.0325
+        },
+        {
+          "chunk_id": "p463-p35-c4",
+          "page": "p463-p35",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p463-p36-c2",
+          "page": "p463-p36",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p463-p37-c3",
+          "page": "p463-p37",
+          "score": 0.0263
+        },
+        {
+          "chunk_id": "p463-p14-c3",
+          "page": "p463-p14",
+          "score": 0.0161
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.74209989999963,
+        "generate_s": 7.123841800000264,
+        "total_s": 11.865941699999894
+      },
+      "searches": [
+        {
+          "query": "Do I need a receipt for a $50 business expense that isn't lodging?",
+          "chunk_ids": [
+            "p463-p35-c3",
+            "p463-p35-c4",
+            "p463-p36-c2",
+            "p463-p37-c3",
+            "p463-p14-c3"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "Yes, you need a receipt for a $50 business expense that isn't lodging. According to the source, documentary evidence such as receipts, canceled checks, or bills, is generally required to support your expenses. However, an exception exists if the expense, other than lodging, is less than $75. Since $50 is less than $75, the exception applies, and you do not need a receipt for this expense.",
+      "citations": [
+        {
+          "chunk_id": "p463-p35-c3",
+          "quote": "Exception. Documentary evidence isn\u2019t needed if any of the following conditions apply. \u2022 You have meals or lodging expenses while traveling away from home for which you account to your employer under an accountable plan, and you use a per diem allowance method that includes meals and/or lodging. (Accountable plans and per diem allowances are discussed in chapter 6.) \u2022 Your expense, other than lodging, is less than $75.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 3991,
+        "output_tokens": 260
+      },
+      "judge": {
+        "correct": false,
+        "faithful": true,
+        "reason": "The system answer incorrectly states that a receipt is needed for a $50 business expense, whereas the expected answer correctly states that no receipt is needed for expenses under $75."
+      }
+    },
+    {
+      "id": "q09",
+      "question": "How much business use do I need to claim a section 179 deduction for my car?",
+      "answerable_expected": true,
+      "expected": "More than 50% business use.",
+      "pages": [
+        "p463-p22"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p463-p22-c4",
+          "page": "p463-p22",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p463-p22-c5",
+          "page": "p463-p22",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p463-p23-c4",
+          "page": "p463-p23",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p463-p29-c3",
+          "page": "p463-p29",
+          "score": 0.0312
+        },
+        {
+          "chunk_id": "p463-p30-c1",
+          "page": "p463-p30",
+          "score": 0.0305
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.716763299999911,
+        "generate_s": 5.663925899999413,
+        "total_s": 10.380689199999324
+      },
+      "searches": [
+        {
+          "query": "section 179 deduction for car business use",
+          "chunk_ids": [
+            "p463-p22-c4",
+            "p463-p22-c5",
+            "p463-p23-c4",
+            "p463-p29-c3",
+            "p463-p30-c1"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "You must use the property more than 50% for business to claim any section 179 deduction.",
+      "citations": [
+        {
+          "chunk_id": "p463-p22-c5",
+          "quote": "More than 50% business use requirement. Y ou must use the property more than 50% for business to claim any section 179 deduction.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4405,
+        "output_tokens": 135
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states that more than 50% business use is required and is directly supported by the cited quote."
+      }
+    },
+    {
+      "id": "q10",
+      "question": "How does the simplified method for the home office deduction work?",
+      "answerable_expected": true,
+      "expected": "Multiply $5 by the square footage used for business, limited to 300 square feet (so at most $1,500).",
+      "pages": [
+        "p334-p42",
+        "p587-p10"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p334-p42-c1",
+          "page": "p334-p42",
+          "score": 0.0313
+        },
+        {
+          "chunk_id": "p587-p10-c2",
+          "page": "p587-p10",
+          "score": 0.0308
+        },
+        {
+          "chunk_id": "p587-p24-c5",
+          "page": "p587-p24",
+          "score": 0.0308
+        },
+        {
+          "chunk_id": "p587-p25-c1",
+          "page": "p587-p25",
+          "score": 0.0306
+        },
+        {
+          "chunk_id": "p587-p27-c1",
+          "page": "p587-p27",
+          "score": 0.0305
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.65575170000011,
+        "generate_s": 8.802757999999812,
+        "total_s": 13.458509699999922
+      },
+      "searches": [
+        {
+          "query": "simplified method for the home office deduction",
+          "chunk_ids": [
+            "p334-p42-c1",
+            "p587-p10-c2",
+            "p587-p24-c5",
+            "p587-p25-c1",
+            "p587-p27-c1"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "The simplified method for the home office deduction is an alternative to calculating and substantiating actual expenses. In most cases, you will figure your deduction by multiplying $5, the prescribed rate, by the area of your home used for a qualified business use. The area you use to figure your deduction is limited to 300 square feet. If you elect to use the simplified method, you cannot deduct any actual expenses for the business except for business expenses that are not related to the use of the home. You also cannot deduct any depreciation (including any additional first-year depreciation) or section 179 expense for the portion of the home that is used for a qualified business use. The depreciation deduction allowable for that portion of the home is deemed to be zero for a year you use the simplified method.",
+      "citations": [
+        {
+          "chunk_id": "p587-p10-c2",
+          "quote": "In most cases, you will figure your deduction by multiplying $5, the prescribed rate, by the area of your home used for a qualified business use. The area you use to figure your deduction is limited to 300 square feet.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        },
+        {
+          "chunk_id": "p587-p10-c2",
+          "quote": "If you elect to use the simplified method, you cannot deduct any actual expenses for the business except for business expenses that are not related to the use of the home. You also cannot deduct any depreciation (including any additional first-year depreciation) or section 179 expense for the portion of the home that is used for a qualified business use.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4093,
+        "output_tokens": 380
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly explains the simplified method by stating the $5 per square foot rate and the 300 square foot limit, which matches the expected answer, and all claims are supported by the cited quotes."
+      }
+    },
+    {
+      "id": "q11",
+      "question": "Can I deduct a home office if I also use the room for personal purposes?",
+      "answerable_expected": true,
+      "expected": "Generally no: you don't meet the exclusive use test if you use the area both for business and personal purposes (exceptions: inventory storage and daycare).",
+      "pages": [
+        "p334-p41",
+        "p587-p3"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p334-p35-c2",
+          "page": "p334-p35",
+          "score": 0.0303
+        },
+        {
+          "chunk_id": "p587-p5-c4",
+          "page": "p587-p5",
+          "score": 0.0301
+        },
+        {
+          "chunk_id": "p334-p42-c1",
+          "page": "p334-p42",
+          "score": 0.0291
+        },
+        {
+          "chunk_id": "p334-p41-c5",
+          "page": "p334-p41",
+          "score": 0.0287
+        },
+        {
+          "chunk_id": "p587-p17-c1",
+          "page": "p587-p17",
+          "score": 0.0262
+        }
+      ],
+      "first_relevant_rank": 4,
+      "page_hit": true,
+      "reciprocal_rank": 0.25,
+      "all_groups_hit": true,
+      "evidence_hit": false,
+      "timings": {
+        "research_s": 4.6037138000001505,
+        "generate_s": 5.756142799999907,
+        "total_s": 10.359856600000057
+      },
+      "searches": [
+        {
+          "query": "deduct home office with personal use",
+          "chunk_ids": [
+            "p334-p35-c2",
+            "p587-p5-c4",
+            "p334-p42-c1",
+            "p334-p41-c5",
+            "p587-p17-c1"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "You can deduct the part of your home used exclusively and regularly for business if you meet both the following tests: \u2022 You physically meet with patients, clients, or customers on your premises. \u2022 Their use of your home is substantial and integral to the conduct of your business. The part of your home you use exclusively and regularly to meet patients, clients, or customers does not have to be your principal place of business.",
+      "citations": [
+        {
+          "chunk_id": "p587-p5-c4",
+          "quote": "you can deduct your expenses for the part of your home used exclusively and regularly for business if you meet both the following tests.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 3760,
+        "output_tokens": 170
+      },
+      "judge": {
+        "correct": false,
+        "faithful": true,
+        "reason": "The system answer does not address the question of whether a home office can be deducted if used for personal purposes, and instead discusses conditions for deducting a home office used for business meetings."
+      }
+    },
+    {
+      "id": "q12",
+      "question": "I store inventory in part of my basement and sometimes use that space personally. Can I still deduct it?",
+      "answerable_expected": true,
+      "expected": "Yes. Storage of inventory or product samples is an exception to the exclusive use test, if your home is the only fixed location of a retail or wholesale business and you use the space regularly.",
+      "pages": [
+        "p587-p3"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p587-p3-c2",
+          "page": "p587-p3",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p334-p31-c2",
+          "page": "p334-p31",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p334-p29-c1",
+          "page": "p334-p29",
+          "score": 0.0306
+        },
+        {
+          "chunk_id": "p334-p41-c3",
+          "page": "p334-p41",
+          "score": 0.0299
+        },
+        {
+          "chunk_id": "p587-p35-c1",
+          "page": "p587-p35",
+          "score": 0.0288
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": false,
+      "timings": {
+        "research_s": 4.642131700000391,
+        "generate_s": 5.815114699999867,
+        "total_s": 10.457246400000258
+      },
+      "searches": [
+        {
+          "query": "deducting inventory storage space used personally",
+          "chunk_ids": [
+            "p587-p3-c2",
+            "p334-p31-c2",
+            "p334-p29-c1",
+            "p334-p41-c3",
+            "p587-p35-c1"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "Yes, you can still deduct the expenses for the storage space even though you sometimes use it for personal purposes. According to the source, 'The expenses for the storage space are deductible even though you do not use this part of your basement exclusively for business.'",
+      "citations": [
+        {
+          "chunk_id": "p587-p3-c2",
+          "quote": "The expenses for the storage space are deductible even though you do not use this part of your basement exclusively for business.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4252,
+        "output_tokens": 150
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states that the storage space can be deducted even with personal use, and the claim is supported by the cited quote."
+      }
+    },
+    {
+      "id": "q14",
+      "question": "I run a daycare in a room my family also uses in the evenings. How do I figure the deduction?",
+      "answerable_expected": true,
+      "expected": "Because daycare use is regular but not exclusive, figure the percentage of time that part of the home is used for daycare (hours used for daycare divided by total hours) and apply it.",
+      "pages": [
+        "p587-p12"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p587-p12-c5",
+          "page": "p587-p12",
+          "score": 0.0325
+        },
+        {
+          "chunk_id": "p587-p12-c3",
+          "page": "p587-p12",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p587-p27-c5",
+          "page": "p587-p27",
+          "score": 0.0311
+        },
+        {
+          "chunk_id": "p587-p27-c4",
+          "page": "p587-p27",
+          "score": 0.0306
+        },
+        {
+          "chunk_id": "p587-p11-c1",
+          "page": "p587-p11",
+          "score": 0.0301
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.655334299999595,
+        "generate_s": 8.157938700000159,
+        "total_s": 12.813272999999754
+      },
+      "searches": [
+        {
+          "query": "deduction for business use of home daycare",
+          "chunk_ids": [
+            "p587-p12-c5",
+            "p587-p12-c3",
+            "p587-p27-c5",
+            "p587-p27-c4",
+            "p587-p11-c1"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "If you run a daycare in a room that your family also uses in the evenings, you need to figure the percentage of time that part of your home is used for daycare. A room that is available for use throughout each business day and that you regularly use in your business is considered to be used for daycare throughout each business day. You do not have to keep records to show the specific hours the area was used for business. You can use the area occasionally for personal reasons. However, a room you use only occasionally for business does not qualify for the deduction. You can use the Daycare Facility Worksheet (for simplified method), near the end of this publication, to help you figure the reduced rate.",
+      "citations": [
+        {
+          "chunk_id": "p587-p12-c5",
+          "quote": "A room that is available for use throughout each business day and that you regularly use in your business is considered to be used for daycare throughout each business day. Y ou do not have to keep records to show the specific hours the area was used for business. Y ou can use the area occa- sionally for personal reasons.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        },
+        {
+          "chunk_id": "p587-p12-c3",
+          "quote": "You can use the Daycare Facility Worksheet (for simplified method), near the end of this publication, to help you figure the reduced rate.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4001,
+        "output_tokens": 336
+      },
+      "judge": {
+        "correct": false,
+        "faithful": true,
+        "reason": "The system answer includes additional information not present in the expected answer, such as details about the simplified method and the Daycare Facility Worksheet, which are not mentioned in the expected answer."
+      }
+    },
+    {
+      "id": "q15",
+      "question": "Over how many years do I depreciate the business part of my home if I started using it for business in 2025?",
+      "answerable_expected": true,
+      "expected": "39 years, straight line, as nonresidential real property under MACRS.",
+      "pages": [
+        "p587-p8",
+        "p946-p33"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p587-p15-c4",
+          "page": "p587-p15",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p587-p10-c1",
+          "page": "p587-p10",
+          "score": 0.0318
+        },
+        {
+          "chunk_id": "p587-p7-c4",
+          "page": "p587-p7",
+          "score": 0.0313
+        },
+        {
+          "chunk_id": "p587-p15-c2",
+          "page": "p587-p15",
+          "score": 0.0305
+        },
+        {
+          "chunk_id": "p587-p9-c3",
+          "page": "p587-p9",
+          "score": 0.0299
+        }
+      ],
+      "first_relevant_rank": null,
+      "page_hit": false,
+      "reciprocal_rank": 0.0,
+      "all_groups_hit": false,
+      "evidence_hit": false,
+      "timings": {
+        "research_s": 4.608788399999867,
+        "generate_s": 5.003511100000651,
+        "total_s": 9.612299500000518
+      },
+      "searches": [
+        {
+          "query": "depreciation of business part of home",
+          "chunk_ids": [
+            "p587-p15-c4",
+            "p587-p10-c1",
+            "p587-p7-c4",
+            "p587-p15-c2",
+            "p587-p9-c3"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": false,
+      "answer": "The information provided does not specify the number of years over which the business part of a home should be depreciated if it was started being used for business in 2025.",
+      "citations": [],
+      "usage": {
+        "input_tokens": 4231,
+        "output_tokens": 86
+      },
+      "judge": {
+        "correct": false,
+        "faithful": null,
+        "reason": "refused an answerable question"
+      }
+    },
+    {
+      "id": "q16",
+      "question": "What MACRS property class are a computer and a desk used in a home office?",
+      "answerable_expected": true,
+      "expected": "A computer is 5-year property; office furniture such as a desk is 7-year property.",
+      "pages": [
+        "p587-p17",
+        "p946-p29"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p946-p99-c1",
+          "page": "p946-p99",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p587-p17-c2",
+          "page": "p587-p17",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p946-p33-c2",
+          "page": "p946-p33",
+          "score": 0.0286
+        },
+        {
+          "chunk_id": "p946-p34-c1",
+          "page": "p946-p34",
+          "score": 0.0284
+        },
+        {
+          "chunk_id": "p946-p39-c1",
+          "page": "p946-p39",
+          "score": 0.0272
+        }
+      ],
+      "first_relevant_rank": 2,
+      "page_hit": true,
+      "reciprocal_rank": 0.5,
+      "all_groups_hit": true,
+      "evidence_hit": false,
+      "timings": {
+        "research_s": 4.784070699999575,
+        "generate_s": 6.119887400000152,
+        "total_s": 10.903958099999727
+      },
+      "searches": [
+        {
+          "query": "MACRS property class for computer and desk in home office",
+          "chunk_ids": [
+            "p946-p99-c1",
+            "p587-p17-c2",
+            "p946-p33-c2",
+            "p946-p34-c1",
+            "p946-p39-c1"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "A computer is classified as 5-year property under MACRS, and a desk used in a home office is classified as 7-year property under MACRS.",
+      "citations": [
+        {
+          "chunk_id": "p587-p17-c2",
+          "quote": "7-year property includes office furniture and fixtures such as desks, files, and safes.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        },
+        {
+          "chunk_id": "p587-p17-c2",
+          "quote": "MACRS Percentage Table for 5- and 7-Year Property Using Half-Year Convention",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4927,
+        "output_tokens": 172
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly identifies the MACRS property classes for a computer and a desk, and all claims are supported by the cited quotes."
+      }
+    },
+    {
+      "id": "q17",
+      "question": "How long is the recovery period for residential rental property?",
+      "answerable_expected": true,
+      "expected": "27.5 years.",
+      "pages": [
+        "p946-p33"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p946-p33-c1",
+          "page": "p946-p33",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p946-p34-c1",
+          "page": "p946-p34",
+          "score": 0.0313
+        },
+        {
+          "chunk_id": "p946-p33-c2",
+          "page": "p946-p33",
+          "score": 0.0313
+        },
+        {
+          "chunk_id": "p946-p98-c3",
+          "page": "p946-p98",
+          "score": 0.0307
+        },
+        {
+          "chunk_id": "p946-p33-c4",
+          "page": "p946-p33",
+          "score": 0.0304
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.67034700000022,
+        "generate_s": 5.860179899999821,
+        "total_s": 10.53052690000004
+      },
+      "searches": [
+        {
+          "query": "recovery period for residential rental property",
+          "chunk_ids": [
+            "p946-p33-c1",
+            "p946-p34-c1",
+            "p946-p33-c2",
+            "p946-p98-c3",
+            "p946-p33-c4"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "The recovery period for residential rental property is 27.5 years.",
+      "citations": [
+        {
+          "chunk_id": "p946-p33-c1",
+          "quote": "Residential rental property ...... 27.5 years",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        },
+        {
+          "chunk_id": "p946-p34-c1",
+          "quote": "Under GDS, the property class for the addition is residential rental property and its recovery period is 27.5 years",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4349,
+        "output_tokens": 153
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the recovery period as 27.5 years, which is directly supported by the cited quotes."
+      }
+    },
+    {
+      "id": "q18",
+      "question": "Can I depreciate the cost of land?",
+      "answerable_expected": true,
+      "expected": "No. Land doesn't wear out, become obsolete, or get used up, though some land preparation costs such as landscaping may be depreciable.",
+      "pages": [
+        "p946-p5"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p946-p5-c4",
+          "page": "p946-p5",
+          "score": 0.0325
+        },
+        {
+          "chunk_id": "p946-p5-c3",
+          "page": "p946-p5",
+          "score": 0.0325
+        },
+        {
+          "chunk_id": "p334-p36-c2",
+          "page": "p334-p36",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p946-p6-c1",
+          "page": "p946-p6",
+          "score": 0.031
+        },
+        {
+          "chunk_id": "p946-p3-c3",
+          "page": "p946-p3",
+          "score": 0.0292
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.639649499999905,
+        "generate_s": 6.072855399999753,
+        "total_s": 10.712504899999658
+      },
+      "searches": [
+        {
+          "query": "Can I depreciate the cost of land?",
+          "chunk_ids": [
+            "p946-p5-c4",
+            "p946-p5-c3",
+            "p334-p36-c2",
+            "p946-p6-c1",
+            "p946-p3-c3"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "No, you cannot depreciate the cost of land because land does not wear out, become obsolete, or get used up.",
+      "citations": [
+        {
+          "chunk_id": "p946-p5-c3",
+          "quote": "Y ou cannot depreciate the cost of land because land does not wear out, become obsolete, or get used up.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        },
+        {
+          "chunk_id": "p334-p36-c2",
+          "quote": "Y ou can never depreciate the cost of land because land does not wear out, become obsolete, or get used up.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 3813,
+        "output_tokens": 175
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states that land cannot be depreciated and provides the same reasoning as the expected answer, supported by the cited quotes."
+      }
+    },
+    {
+      "id": "q20",
+      "question": "What is the bonus (special) depreciation rate for qualified property placed in service after January 19, 2025?",
+      "answerable_expected": true,
+      "expected": "100% (unless you elect out; a 40% election is available).",
+      "pages": [
+        "p463-p1",
+        "p946-p1",
+        "p946-p23"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p463-p1-c2",
+          "page": "p463-p1",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p946-p23-c3",
+          "page": "p946-p23",
+          "score": 0.0323
+        },
+        {
+          "chunk_id": "p946-p1-c2",
+          "page": "p946-p1",
+          "score": 0.0308
+        },
+        {
+          "chunk_id": "p946-p25-c4",
+          "page": "p946-p25",
+          "score": 0.0304
+        },
+        {
+          "chunk_id": "p463-p24-c3",
+          "page": "p463-p24",
+          "score": 0.0295
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.882934400000522,
+        "generate_s": 9.065898099999686,
+        "total_s": 13.948832500000208
+      },
+      "searches": [
+        {
+          "query": "bonus depreciation rate for qualified property placed in service after January 19, 2025",
+          "chunk_ids": [
+            "p463-p1-c2",
+            "p946-p23-c3",
+            "p946-p1-c2",
+            "p946-p25-c4",
+            "p463-p24-c3"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "The bonus (special) depreciation rate for qualified property placed in service after January 19, 2025 is 100%. However, taxpayers can elect to take a 40% special depreciation allowance (60% for certain property having longer production periods or certain aircraft), instead of 100%.",
+      "citations": [
+        {
+          "chunk_id": "p463-p1-c2",
+          "quote": "For 2025, the first -year special (\u201cbonus\u201d) depreciation allowance on qualified property (including cars, trucks, and vans) is 100% for qualified property acquired and placed in service after January 19, 2025. However, the special depreciation allowance remains 40% for qualified property placed in service during 2025 that is acquired after September 27, 2017, and before January 20, 2025.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        },
+        {
+          "chunk_id": "p946-p23-c3",
+          "quote": "Unless you elect out, you must take a 100% special depreciation allowance for certain qualified property (including long production period property and certain aircraft) acquired and placed in service after January 19, 2025. However, you can elect to take a 40% special depreciation allowance for certain qualified property acquired and placed in service after January 19, 2025 (60% for property with a long production period and certain aircraft), instead of the 100% special depreciation allowance in the first tax year ending after January 19, 2025.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 5106,
+        "output_tokens": 413
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the 100% bonus depreciation rate and the availability of a 40% election, which is supported by the cited quotes."
+      }
+    },
+    {
+      "id": "q21",
+      "question": "What does the half-year convention mean for depreciation?",
+      "answerable_expected": true,
+      "expected": "All property placed in service or disposed of during the year is treated as placed in service or disposed of at the midpoint of the year, so you get a half-year of depreciation in the first year.",
+      "pages": [
+        "p587-p17",
+        "p946-p34"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p946-p39-c3",
+          "page": "p946-p39",
+          "score": 0.0317
+        },
+        {
+          "chunk_id": "p946-p41-c1",
+          "page": "p946-p41",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p946-p45-c5",
+          "page": "p946-p45",
+          "score": 0.0313
+        },
+        {
+          "chunk_id": "p587-p17-c2",
+          "page": "p587-p17",
+          "score": 0.0307
+        },
+        {
+          "chunk_id": "p946-p41-c5",
+          "page": "p946-p41",
+          "score": 0.0303
+        }
+      ],
+      "first_relevant_rank": 4,
+      "page_hit": true,
+      "reciprocal_rank": 0.25,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.5709419000004345,
+        "generate_s": 6.603221399999711,
+        "total_s": 11.174163300000146
+      },
+      "searches": [
+        {
+          "query": "half-year convention depreciation",
+          "chunk_ids": [
+            "p946-p39-c3",
+            "p946-p41-c1",
+            "p946-p45-c5",
+            "p587-p17-c2",
+            "p946-p41-c5"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "The half-year convention means that you deduct a half-year of depreciation for the first year and the last year that you depreciate the property. You deduct a full year of depreciation for any other year during the recovery period. Figure your depreciation deduction for the year you place the property in service by dividing the depreciation for a full year by 2. If you dispose of the property before the end of the recovery period, figure your depreciation deduction for the year of the disposition the same way.",
+      "citations": [
+        {
+          "chunk_id": "p946-p41-c1",
+          "quote": "If this convention applies, you deduct a half-year of depreciation for the first year and the last year that you depreciate the property. You deduct a full year of depreciation for any other year during the recovery period.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4097,
+        "output_tokens": 212
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer accurately explains the half-year convention, aligning with the cited quote and the expected answer, though phrased differently."
+      }
+    },
+    {
+      "id": "q22",
+      "question": "When do I have to use the mid-quarter convention instead of the half-year convention?",
+      "answerable_expected": true,
+      "expected": "When more than 40% of the depreciable property placed in service during the year was placed in service in the last 3 months of the tax year.",
+      "pages": [
+        "p587-p17"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p946-p45-c1",
+          "page": "p946-p45",
+          "score": 0.0318
+        },
+        {
+          "chunk_id": "p946-p34-c3",
+          "page": "p946-p34",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p946-p39-c3",
+          "page": "p946-p39",
+          "score": 0.0313
+        },
+        {
+          "chunk_id": "p463-p27-c5",
+          "page": "p463-p27",
+          "score": 0.0313
+        },
+        {
+          "chunk_id": "p587-p17-c2",
+          "page": "p587-p17",
+          "score": 0.0307
+        }
+      ],
+      "first_relevant_rank": 5,
+      "page_hit": true,
+      "reciprocal_rank": 0.2,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.693261500000517,
+        "generate_s": 5.854017599999679,
+        "total_s": 10.547279100000196
+      },
+      "searches": [
+        {
+          "query": "when to use mid-quarter convention instead of half-year convention",
+          "chunk_ids": [
+            "p946-p45-c1",
+            "p946-p34-c3",
+            "p946-p39-c3",
+            "p463-p27-c5",
+            "p587-p17-c2"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "You must use the mid-quarter convention instead of the half-year convention if you place more than 40% of your depreciable property in service during the last 3 months of your tax year.",
+      "citations": [
+        {
+          "chunk_id": "p587-p17-c2",
+          "quote": "If you place more than 40% of your depreciable property in service during the last 3 months of your tax year, you must use the mid-quarter convention instead of the half-year convention.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 3991,
+        "output_tokens": 162
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the condition for using the mid-quarter convention and is directly supported by the cited quote."
+      }
+    },
+    {
+      "id": "q23",
+      "question": "At what total cost of section 179 property can I no longer take any section 179 deduction in 2025?",
+      "answerable_expected": true,
+      "expected": "$6,500,000 or more.",
+      "pages": [
+        "p463-p23",
+        "p946-p18"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p946-p19-c3",
+          "page": "p946-p19",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p463-p23-c1",
+          "page": "p463-p23",
+          "score": 0.0323
+        },
+        {
+          "chunk_id": "p946-p19-c4",
+          "page": "p946-p19",
+          "score": 0.031
+        },
+        {
+          "chunk_id": "p946-p18-c1",
+          "page": "p946-p18",
+          "score": 0.0296
+        },
+        {
+          "chunk_id": "p946-p20-c5",
+          "page": "p946-p20",
+          "score": 0.0292
+        }
+      ],
+      "first_relevant_rank": 2,
+      "page_hit": true,
+      "reciprocal_rank": 0.5,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.801334100000531,
+        "generate_s": 6.227375299999949,
+        "total_s": 11.02870940000048
+      },
+      "searches": [
+        {
+          "query": "section 179 deduction limit 2025",
+          "chunk_ids": [
+            "p946-p19-c3",
+            "p463-p23-c1",
+            "p946-p19-c4",
+            "p946-p18-c1",
+            "p946-p20-c5"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "If the cost of your section 179 property placed in service during tax years beginning in 2025 is $6,500,000 or more, you can\u2019t take a section 179 deduction.",
+      "citations": [
+        {
+          "chunk_id": "p463-p23-c1",
+          "quote": "If the cost of your section 179 property placed in service during tax years beginning in 2025 is $6,500,000 or more, you can\u2019t take a section 179 deduction.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4983,
+        "output_tokens": 180
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the threshold of $6,500,000 and is directly supported by the cited quote."
+      }
+    },
+    {
+      "id": "q25",
+      "question": "What is the self-employment tax rate for 2025?",
+      "answerable_expected": true,
+      "expected": "15.3%: 12.4% social security plus 2.9% Medicare.",
+      "pages": [
+        "p334-p10",
+        "p334-p43"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p334-p4-c1",
+          "page": "p334-p4",
+          "score": 0.0325
+        },
+        {
+          "chunk_id": "p334-p5-c1",
+          "page": "p334-p5",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p334-p9-c4",
+          "page": "p334-p9",
+          "score": 0.0304
+        },
+        {
+          "chunk_id": "p334-p10-c1",
+          "page": "p334-p10",
+          "score": 0.0295
+        },
+        {
+          "chunk_id": "p334-p10-c3",
+          "page": "p334-p10",
+          "score": 0.0267
+        }
+      ],
+      "first_relevant_rank": 4,
+      "page_hit": true,
+      "reciprocal_rank": 0.25,
+      "all_groups_hit": true,
+      "evidence_hit": false,
+      "timings": {
+        "research_s": 4.717000700000426,
+        "generate_s": 5.814083100000062,
+        "total_s": 10.531083800000488
+      },
+      "searches": [
+        {
+          "query": "self-employment tax rate for 2025",
+          "chunk_ids": [
+            "p334-p4-c1",
+            "p334-p5-c1",
+            "p334-p9-c4",
+            "p334-p10-c1",
+            "p334-p10-c3"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "The self-employment tax rate for 2025 is 15.3%, which includes 12.4% for the social security part and 2.9% for the Medicare part.",
+      "citations": [
+        {
+          "chunk_id": "p334-p10-c3",
+          "quote": "wages, tips, and net earnings in 2025 are subject to any combination of the 2.9% Medicare part of SE tax, Medicare tax, or Medicare part of railroad retirement tax.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4677,
+        "output_tokens": 153
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the self-employment tax rate for 2025 as 15.3%, broken down into 12.4% for social security and 2.9% for Medicare, which aligns with the expected answer."
+      }
+    },
+    {
+      "id": "q26",
+      "question": "What is the maximum amount of net earnings subject to the social security part of self-employment tax in 2025?",
+      "answerable_expected": true,
+      "expected": "$176,100 (there's no limit for the Medicare part).",
+      "pages": [
+        "p334-p4",
+        "p334-p10",
+        "p334-p43"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p334-p4-c1",
+          "page": "p334-p4",
+          "score": 0.0318
+        },
+        {
+          "chunk_id": "p334-p10-c2",
+          "page": "p334-p10",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p334-p10-c3",
+          "page": "p334-p10",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p334-p43-c4",
+          "page": "p334-p43",
+          "score": 0.0313
+        },
+        {
+          "chunk_id": "p334-p10-c1",
+          "page": "p334-p10",
+          "score": 0.0304
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.814810299999408,
+        "generate_s": 6.08230790000016,
+        "total_s": 10.897118199999568
+      },
+      "searches": [
+        {
+          "query": "maximum amount of net earnings subject to the social security part of self-employment tax in 2025",
+          "chunk_ids": [
+            "p334-p4-c1",
+            "p334-p10-c2",
+            "p334-p10-c3",
+            "p334-p43-c4",
+            "p334-p10-c1"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "The maximum amount of net earnings subject to the social security part of self-employment tax in 2025 is $176,100.",
+      "citations": [
+        {
+          "chunk_id": "p334-p10-c2",
+          "quote": "Only the first $176,100 of your combined wages, tips, and net earnings in 2025 is subject to any combination of the 12.4% social security part of SE tax, social security tax, or the Tier 1 part of railroad retirement tax.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4265,
+        "output_tokens": 185
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the maximum amount of net earnings subject to the social security part of self-employment tax in 2025 as $176,100, which is supported by the cited quote."
+      }
+    },
+    {
+      "id": "q27",
+      "question": "I made $500 from self-employment this year. Do I have to file a tax return?",
+      "answerable_expected": true,
+      "expected": "Yes: you must file if your net earnings from self-employment were $400 or more.",
+      "pages": [
+        "p334-p7",
+        "p334-p43"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p10-c4",
+          "page": "p17-p10",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p334-p7-c2",
+          "page": "p334-p7",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p334-p10-c1",
+          "page": "p334-p10",
+          "score": 0.0306
+        },
+        {
+          "chunk_id": "p17-p9-c1",
+          "page": "p17-p9",
+          "score": 0.0298
+        },
+        {
+          "chunk_id": "p334-p10-c2",
+          "page": "p334-p10",
+          "score": 0.0294
+        }
+      ],
+      "first_relevant_rank": 2,
+      "page_hit": true,
+      "reciprocal_rank": 0.5,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.61320219999925,
+        "generate_s": 6.961202899999989,
+        "total_s": 11.57440509999924
+      },
+      "searches": [
+        {
+          "query": "self-employment income tax return requirements",
+          "chunk_ids": [
+            "p17-p10-c4",
+            "p334-p7-c2",
+            "p334-p10-c1",
+            "p17-p9-c1",
+            "p334-p10-c2"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "Yes, you have to file a tax return if your net earnings from self-employment were $400 or more. Since you made $500 from self-employment, you must file an income tax return and also file Schedule SE (Form 1040) to figure your self-employment tax.",
+      "citations": [
+        {
+          "chunk_id": "p334-p7-c2",
+          "quote": "Y ou have to file an income tax return for 2025 if your net earnings from self-employment were $400 or more.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        },
+        {
+          "chunk_id": "p17-p10-c4",
+          "quote": "1. Y our net earnings from self-employment (excluding church employee income) were $400 or more, or 2. Y ou had church employee income of $108.28 or more.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4546,
+        "output_tokens": 239
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states that the user must file a tax return if their net earnings from self-employment were $400 or more, and it accurately cites the relevant quotes to support this claim."
+      }
+    },
+    {
+      "id": "q28",
+      "question": "Can I deduct part of my self-employment tax?",
+      "answerable_expected": true,
+      "expected": "Yes, one-half of it, as an adjustment to income on Schedule 1 (Form 1040), line 15.",
+      "pages": [
+        "p17-p102",
+        "p334-p10",
+        "p334-p40",
+        "p334-p42",
+        "p587-p9"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p102-c3",
+          "page": "p17-p102",
+          "score": 0.031
+        },
+        {
+          "chunk_id": "p17-p98-c3",
+          "page": "p17-p98",
+          "score": 0.0284
+        },
+        {
+          "chunk_id": "p17-p10-c4",
+          "page": "p17-p10",
+          "score": 0.0164
+        },
+        {
+          "chunk_id": "p334-p4-c4",
+          "page": "p334-p4",
+          "score": 0.0164
+        },
+        {
+          "chunk_id": "p17-p73-c6",
+          "page": "p17-p73",
+          "score": 0.0161
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": false,
+      "timings": {
+        "research_s": 4.75021310000011,
+        "generate_s": 5.675232599999617,
+        "total_s": 10.425445699999727
+      },
+      "searches": [
+        {
+          "query": "Can I deduct part of my self-employment tax?",
+          "chunk_ids": [
+            "p17-p102-c3",
+            "p17-p98-c3",
+            "p17-p10-c4",
+            "p334-p4-c4",
+            "p17-p73-c6"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "Yes, you can deduct part of your self-employment tax. Specifically, one-half of the self-employment tax you pay is deductible. This is mentioned in the source text: 'one-half of self-employment tax you pay is deductible.'",
+      "citations": [
+        {
+          "chunk_id": "p17-p102-c3",
+          "quote": "one-half of self-employment tax you pay is deductible.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4399,
+        "output_tokens": 141
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states that one-half of self-employment tax is deductible as an adjustment to income on Schedule 1 (Form 1040), line 15, and the cited quote supports this claim."
+      }
+    },
+    {
+      "id": "q30",
+      "question": "When do I report rent I pay for my business on Form 1099-MISC?",
+      "answerable_expected": true,
+      "expected": "For rent payments of $600 or more, other than rent paid to real estate agents.",
+      "pages": [
+        "p334-p12"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p334-p12-c2",
+          "page": "p334-p12",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p463-p47-c5",
+          "page": "p463-p47",
+          "score": 0.0306
+        },
+        {
+          "chunk_id": "p334-p21-c2",
+          "page": "p334-p21",
+          "score": 0.0301
+        },
+        {
+          "chunk_id": "p334-p13-c2",
+          "page": "p334-p13",
+          "score": 0.0295
+        },
+        {
+          "chunk_id": "p17-p58-c2",
+          "page": "p17-p58",
+          "score": 0.0274
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.699835299999904,
+        "generate_s": 5.131084999999985,
+        "total_s": 9.830920299999889
+      },
+      "searches": [
+        {
+          "query": "When to report rent paid for business on Form 1099-MISC",
+          "chunk_ids": [
+            "p334-p12-c2",
+            "p463-p47-c5",
+            "p334-p21-c2",
+            "p334-p13-c2",
+            "p17-p58-c2"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": false,
+      "answer": "The provided sources do not mention reporting rent paid by a business on Form 1099-MISC. Instead, they describe when a business must use Form 1099-MISC to report payments made to others, such as rent payments of $600 or more.",
+      "citations": [],
+      "usage": {
+        "input_tokens": 4129,
+        "output_tokens": 115
+      },
+      "judge": {
+        "correct": false,
+        "faithful": null,
+        "reason": "refused an answerable question"
+      }
+    },
+    {
+      "id": "q31",
+      "question": "Can I deduct what I pay to park at my regular workplace?",
+      "answerable_expected": true,
+      "expected": "No. Parking fees at your place of work are nondeductible commuting expenses.",
+      "pages": [
+        "p334-p35",
+        "p463-p21"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p334-p35-c1",
+          "page": "p334-p35",
+          "score": 0.0313
+        },
+        {
+          "chunk_id": "p334-p35-c4",
+          "page": "p334-p35",
+          "score": 0.0302
+        },
+        {
+          "chunk_id": "p17-p52-c6",
+          "page": "p17-p52",
+          "score": 0.0301
+        },
+        {
+          "chunk_id": "p463-p19-c2",
+          "page": "p463-p19",
+          "score": 0.0301
+        },
+        {
+          "chunk_id": "p463-p21-c4",
+          "page": "p463-p21",
+          "score": 0.0299
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.593925799999852,
+        "generate_s": 5.254353700000138,
+        "total_s": 9.84827949999999
+      },
+      "searches": [
+        {
+          "query": "deduct parking at regular workplace",
+          "chunk_ids": [
+            "p334-p35-c1",
+            "p334-p35-c4",
+            "p17-p52-c6",
+            "p463-p19-c2",
+            "p463-p21-c4"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "No, you cannot deduct the costs of parking fees you pay to park your car at your place of work. These costs are considered nondeductible commuting expenses.",
+      "citations": [
+        {
+          "chunk_id": "p334-p35-c4",
+          "quote": "Parking fees you pay to park your car at your place of work are nondeductible commuting expenses.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 3730,
+        "output_tokens": 114
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states that parking fees at the workplace are nondeductible commuting expenses, and this is directly supported by the cited quote."
+      }
+    },
+    {
+      "id": "q32",
+      "question": "What is the 2025 standard deduction for married couples filing jointly?",
+      "answerable_expected": true,
+      "expected": "$31,500.",
+      "pages": [
+        "p17-p3",
+        "p17-p95"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p97-c1",
+          "page": "p17-p97",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p17-p95-c3",
+          "page": "p17-p95",
+          "score": 0.0318
+        },
+        {
+          "chunk_id": "p17-p3-c2",
+          "page": "p17-p3",
+          "score": 0.0305
+        },
+        {
+          "chunk_id": "p17-p3-c5",
+          "page": "p17-p3",
+          "score": 0.0288
+        },
+        {
+          "chunk_id": "p17-p94-c2",
+          "page": "p17-p94",
+          "score": 0.0286
+        }
+      ],
+      "first_relevant_rank": 2,
+      "page_hit": true,
+      "reciprocal_rank": 0.5,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 3.9785980999995445,
+        "generate_s": 5.233523800000512,
+        "total_s": 9.212121900000056
+      },
+      "searches": [
+        {
+          "query": "What is the 2025 standard deduction for married couples filing jointly?",
+          "chunk_ids": [
+            "p17-p97-c1",
+            "p17-p95-c3",
+            "p17-p3-c2",
+            "p17-p3-c5",
+            "p17-p94-c2"
+          ],
+          "fallback": true
+        }
+      ],
+      "stop_reason": "no_search",
+      "answerable_predicted": true,
+      "answer": "The 2025 standard deduction for married couples filing jointly is $31,500.",
+      "citations": [
+        {
+          "chunk_id": "p17-p97-c1",
+          "quote": "Married filing jointly or Qualifying surviving spouse 31,500",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 2529,
+        "output_tokens": 88
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the 2025 standard deduction for married couples filing jointly as $31,500, which matches the expected answer and is supported by the cited quote."
+      }
+    },
+    {
+      "id": "q34",
+      "question": "When is my 2025 tax return due, and how long can I get with an extension?",
+      "answerable_expected": true,
+      "expected": "April 15, 2026; an automatic 6-month extension moves the filing date to October 15, 2026 (but tax owed is still due April 15).",
+      "pages": [
+        "p17-p3",
+        "p17-p8",
+        "p17-p12",
+        "p17-p13"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p13-c7",
+          "page": "p17-p13",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p17-p21-c2",
+          "page": "p17-p21",
+          "score": 0.0308
+        },
+        {
+          "chunk_id": "p17-p13-c4",
+          "page": "p17-p13",
+          "score": 0.0306
+        },
+        {
+          "chunk_id": "p334-p9-c2",
+          "page": "p334-p9",
+          "score": 0.0292
+        },
+        {
+          "chunk_id": "p17-p12-c3",
+          "page": "p17-p12",
+          "score": 0.0289
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.592769900000349,
+        "generate_s": 7.867097899999862,
+        "total_s": 12.459867800000211
+      },
+      "searches": [
+        {
+          "query": "2025 tax return due date and extension",
+          "chunk_ids": [
+            "p17-p13-c7",
+            "p17-p21-c2",
+            "p17-p13-c4",
+            "p334-p9-c2",
+            "p17-p12-c3"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "Your 2025 tax return is due on April 15, 2026, if you use the calendar year. If you are unable to file your return by the due date, you may be able to get an automatic 6-month extension of time to file. This will extend the tax filing due date until October 15, 2026. However, if you do not pay the tax due by the regular due date (April 15 for most taxpayers), you will owe interest and may also be charged penalties.",
+      "citations": [
+        {
+          "chunk_id": "p17-p13-c4",
+          "quote": "If you can\u2019t file your 2025 return by the due date, you may be able to get an automatic 6-month extension of time to file. Example. If your return is due on April 15, 2026, you will have until October 15, 2026, to file.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        },
+        {
+          "chunk_id": "p334-p9-c2",
+          "quote": "If you cannot file your return on time, use Form 4868, Application for Automatic Extension of Time To File U.S. Individual Income Tax Return, to request an automatic 6-month extension. For calendar-year taxpayers, this will extend the tax filing due date until October 15.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4311,
+        "output_tokens": 347
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the due date for the 2025 tax return as April 15, 2026, and the extension to October 15, 2026, with proper mention of the interest and penalties for not paying by April 15, all supported by the cited quotes."
+      }
+    },
+    {
+      "id": "q35",
+      "question": "How much can I contribute to a traditional IRA for 2025?",
+      "answerable_expected": true,
+      "expected": "$7,000, or $8,000 if you're 50 or older (limited to your taxable compensation).",
+      "pages": [
+        "p17-p81",
+        "p17-p88",
+        "p17-p89"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p4-c4",
+          "page": "p17-p4",
+          "score": 0.0307
+        },
+        {
+          "chunk_id": "p17-p80-c1",
+          "page": "p17-p80",
+          "score": 0.0306
+        },
+        {
+          "chunk_id": "p17-p81-c2",
+          "page": "p17-p81",
+          "score": 0.0291
+        },
+        {
+          "chunk_id": "p17-p81-c4",
+          "page": "p17-p81",
+          "score": 0.0289
+        },
+        {
+          "chunk_id": "p17-p84-c2",
+          "page": "p17-p84",
+          "score": 0.0288
+        }
+      ],
+      "first_relevant_rank": 3,
+      "page_hit": true,
+      "reciprocal_rank": 0.3333333333333333,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.630056900000454,
+        "generate_s": 6.680216099999598,
+        "total_s": 11.310273000000052
+      },
+      "searches": [
+        {
+          "query": "IRA contribution limits 2025",
+          "chunk_ids": [
+            "p17-p4-c4",
+            "p17-p80-c1",
+            "p17-p81-c2",
+            "p17-p81-c4",
+            "p17-p84-c2"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "For 2025, the general contribution limit for a traditional IRA is $7,000. If you are 50 or older, you can contribute an additional $1,000, making the total contribution limit $8,000. However, if you are married filing jointly and your spouse's compensation is higher than yours, the contribution limit may be further adjusted based on your combined compensation and your spouse's IRA contributions. See the Spousal IRA limit for more details.",
+      "citations": [
+        {
+          "chunk_id": "p17-p81-c4",
+          "quote": "1. $7,000 ($8,000 if you are 50 or older). 2. The total compensation includible in the gross income of both you and your spouse for the year, reduced by the following two amounts.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4675,
+        "output_tokens": 231
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the $7,000 and $8,000 limits and is supported by the cited quotes."
+      }
+    },
+    {
+      "id": "q36",
+      "question": "What is the maximum child tax credit per qualifying child for 2025?",
+      "answerable_expected": true,
+      "expected": "$2,200 per qualifying child.",
+      "pages": [
+        "p17-p110",
+        "p17-p111"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p110-c6",
+          "page": "p17-p110",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p17-p111-c5",
+          "page": "p17-p111",
+          "score": 0.0323
+        },
+        {
+          "chunk_id": "p17-p111-c7",
+          "page": "p17-p111",
+          "score": 0.031
+        },
+        {
+          "chunk_id": "p17-p112-c2",
+          "page": "p17-p112",
+          "score": 0.0301
+        },
+        {
+          "chunk_id": "p17-p32-c7",
+          "page": "p17-p32",
+          "score": 0.03
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.647047900000871,
+        "generate_s": 5.262862899999163,
+        "total_s": 9.909910800000034
+      },
+      "searches": [
+        {
+          "query": "maximum child tax credit per qualifying child for 2025",
+          "chunk_ids": [
+            "p17-p110-c6",
+            "p17-p111-c5",
+            "p17-p111-c7",
+            "p17-p112-c2",
+            "p17-p32-c7"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "The maximum child tax credit per qualifying child for 2025 is $2,200.",
+      "citations": [
+        {
+          "chunk_id": "p17-p110-c6",
+          "quote": "The maximum amount of CTC for each qualifying child increased to $2,200.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4171,
+        "output_tokens": 122
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the maximum child tax credit for 2025 as $2,200, which matches the expected answer and is supported by the cited quote."
+      }
+    },
+    {
+      "id": "q37",
+      "question": "How old can a child be and still be my qualifying child?",
+      "answerable_expected": true,
+      "expected": "Under 19 at the end of the year (and younger than you), or under 24 if a full-time student, or any age if permanently and totally disabled.",
+      "pages": [
+        "p17-p29",
+        "p17-p30"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p34-c2",
+          "page": "p17-p34",
+          "score": 0.0313
+        },
+        {
+          "chunk_id": "p17-p35-c5",
+          "page": "p17-p35",
+          "score": 0.0306
+        },
+        {
+          "chunk_id": "p17-p26-c5",
+          "page": "p17-p26",
+          "score": 0.0302
+        },
+        {
+          "chunk_id": "p17-p29-c3",
+          "page": "p17-p29",
+          "score": 0.0301
+        },
+        {
+          "chunk_id": "p17-p27-c3",
+          "page": "p17-p27",
+          "score": 0.0299
+        }
+      ],
+      "first_relevant_rank": 4,
+      "page_hit": true,
+      "reciprocal_rank": 0.25,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.676063899999463,
+        "generate_s": 6.120137900000373,
+        "total_s": 10.796201799999835
+      },
+      "searches": [
+        {
+          "query": "How old can a child be and still be my qualifying child?",
+          "chunk_ids": [
+            "p17-p34-c2",
+            "p17-p35-c5",
+            "p17-p26-c5",
+            "p17-p29-c3",
+            "p17-p27-c3"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "A child can be under age 19 at the end of the year and younger than you (or your spouse if filing jointly), or under age 24 at the end of the year, a student, and younger than you (or your spouse if filing jointly), or any age if permanently and totally disabled.",
+      "citations": [
+        {
+          "chunk_id": "p17-p29-c3",
+          "quote": "2. The child must be (a) under age 19 at the end of the year and younger than you (or your spouse if filing jointly); (b) under age 24 at the end of the year, a student, and younger than you (or your spouse if filing jointly); or (c) any age if permanently and totally disabled.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4305,
+        "output_tokens": 218
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer correctly states the same facts as the expected answer, and all claims are supported by the cited quote."
+      }
+    },
+    {
+      "id": "q39",
+      "question": "Are gambling winnings taxable, and can I deduct my gambling losses?",
+      "answerable_expected": true,
+      "expected": "Winnings must be included in income (Schedule 1, line 8b); losses are deductible only as an itemized deduction on Schedule A, up to the amount of winnings.",
+      "pages": [
+        "p17-p77",
+        "p17-p107"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p107-c1",
+          "page": "p17-p107",
+          "score": 0.0323
+        },
+        {
+          "chunk_id": "p17-p78-c1",
+          "page": "p17-p78",
+          "score": 0.032
+        },
+        {
+          "chunk_id": "p17-p42-c3",
+          "page": "p17-p42",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p17-p77-c7",
+          "page": "p17-p77",
+          "score": 0.0315
+        },
+        {
+          "chunk_id": "p17-p42-c2",
+          "page": "p17-p42",
+          "score": 0.0312
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.701438299999609,
+        "generate_s": 7.362794499999836,
+        "total_s": 12.064232799999445
+      },
+      "searches": [
+        {
+          "query": "Are gambling winnings taxable, and can I deduct my gambling losses?",
+          "chunk_ids": [
+            "p17-p107-c1",
+            "p17-p78-c1",
+            "p17-p42-c3",
+            "p17-p77-c7",
+            "p17-p42-c2"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "Yes, gambling winnings are taxable and must be reported on Schedule 1 (Form 1040), line 8b. You can deduct gambling losses, but only up to the amount of your winnings, and these losses must be claimed as an itemized deduction on Schedule A (Form 1040), line 16.",
+      "citations": [
+        {
+          "chunk_id": "p17-p107-c1",
+          "quote": "You must report the full amount of your gambling winnings for the year on Schedule 1 (Form 1040), line 8b. You deduct your gambling losses for the year on Schedule A (Form 1040), line 16. You can\u2019t deduct gambling losses that are more than your winnings.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        },
+        {
+          "chunk_id": "p17-p77-c7",
+          "quote": "You must include your gambling winnings in income on Schedule 1 (Form 1040), line 8b. ... If you itemize your deductions on Schedule A (Form 1040), you can deduct gambling losses you had during the year, but only up to the amount of your winnings.",
+          "valid": false,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": false
+        }
+      ],
+      "usage": {
+        "input_tokens": 4399,
+        "output_tokens": 306
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer accurately reflects the information in the cited quotes, correctly stating that gambling winnings are taxable and must be reported on Schedule 1, line 8b, and that gambling losses are deductible as an itemized deduction on Schedule A, up to the amount of winnings."
+      }
+    },
+    {
+      "id": "q40",
+      "question": "How long do I have to file a claim for a refund?",
+      "answerable_expected": true,
+      "expected": "Generally within 3 years from the date you filed the original return or 2 years from the date you paid the tax, whichever is later.",
+      "pages": [
+        "p17-p129",
+        "p334-p49"
+      ],
+      "retrieved": [
+        {
+          "chunk_id": "p334-p49-c1",
+          "page": "p334-p49",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p17-p129-c1",
+          "page": "p17-p129",
+          "score": 0.0289
+        },
+        {
+          "chunk_id": "p17-p129-c2",
+          "page": "p17-p129",
+          "score": 0.0284
+        },
+        {
+          "chunk_id": "p17-p21-c6",
+          "page": "p17-p21",
+          "score": 0.0281
+        },
+        {
+          "chunk_id": "p17-p20-c7",
+          "page": "p17-p20",
+          "score": 0.0277
+        }
+      ],
+      "first_relevant_rank": 1,
+      "page_hit": true,
+      "reciprocal_rank": 1.0,
+      "all_groups_hit": true,
+      "evidence_hit": true,
+      "timings": {
+        "research_s": 4.677957400000196,
+        "generate_s": 7.2384777999996,
+        "total_s": 11.916435199999796
+      },
+      "searches": [
+        {
+          "query": "How long do I have to file a claim for a refund?",
+          "chunk_ids": [
+            "p334-p49-c1",
+            "p17-p129-c1",
+            "p17-p129-c2",
+            "p17-p21-c6",
+            "p17-p20-c7"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": true,
+      "answer": "You must generally file a claim for refund within 3 years from the date you filed your original return or 2 years from the date you paid the tax, whichever is later. If you were due a refund but you didn\u2019t file a return, you must file a refund claim within 2 years from the time the tax was paid to get that refund.",
+      "citations": [
+        {
+          "chunk_id": "p334-p49-c1",
+          "quote": "You must generally file the claim within 3 years from the date you filed your original return or 2 years from the date you paid the tax, whichever is later. If you were due a refund but you didn\u2019t file a return, you must file a refund claim within 2 years from the time the tax was paid to get that refund.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        },
+        {
+          "chunk_id": "p17-p129-c1",
+          "quote": "You may file a claim for refund if you think you paid too much tax. You must generally file the claim within 3 years from the date you filed your original return or 2 years from the date you paid the tax, whichever is later.",
+          "valid": true,
+          "cited_chunk_was_retrieved": true,
+          "quote_found_in_chunk": true
+        }
+      ],
+      "usage": {
+        "input_tokens": 4095,
+        "output_tokens": 298
+      },
+      "judge": {
+        "correct": true,
+        "faithful": true,
+        "reason": "The system answer accurately reflects the information provided in the cited quotes and matches the expected answer in meaning, even though the wording differs slightly."
+      }
+    },
+    {
+      "id": "u01",
+      "question": "What is the tax rate on lottery winnings in Canada?",
+      "answerable_expected": false,
+      "expected": "Not covered by these publications.",
+      "pages": [],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p42-c3",
+          "page": "p17-p42",
+          "score": 0.0323
+        },
+        {
+          "chunk_id": "p17-p42-c2",
+          "page": "p17-p42",
+          "score": 0.0323
+        },
+        {
+          "chunk_id": "p17-p78-c1",
+          "page": "p17-p78",
+          "score": 0.0323
+        },
+        {
+          "chunk_id": "p17-p77-c7",
+          "page": "p17-p77",
+          "score": 0.0301
+        },
+        {
+          "chunk_id": "p17-p135-c3",
+          "page": "p17-p135",
+          "score": 0.0156
+        }
+      ],
+      "timings": {
+        "research_s": 4.05626089999987,
+        "generate_s": 4.6746210999999676,
+        "total_s": 8.730881999999838
+      },
+      "searches": [
+        {
+          "query": "What is the tax rate on lottery winnings in Canada?",
+          "chunk_ids": [
+            "p17-p42-c3",
+            "p17-p42-c2",
+            "p17-p78-c1",
+            "p17-p77-c7",
+            "p17-p135-c3"
+          ],
+          "fallback": true
+        }
+      ],
+      "stop_reason": "no_search",
+      "answerable_predicted": false,
+      "answer": "The provided sources do not contain information about the tax rate on lottery winnings in Canada.",
+      "citations": [],
+      "usage": {
+        "input_tokens": 2368,
+        "output_tokens": 35
+      }
+    },
+    {
+      "id": "u02",
+      "question": "What is California's state income tax rate on capital gains?",
+      "answerable_expected": false,
+      "expected": "Not covered by these publications.",
+      "pages": [],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p9-c3",
+          "page": "p17-p9",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p17-p135-c3",
+          "page": "p17-p135",
+          "score": 0.0161
+        },
+        {
+          "chunk_id": "p334-p19-c2",
+          "page": "p334-p19",
+          "score": 0.0161
+        },
+        {
+          "chunk_id": "p587-p14-c4",
+          "page": "p587-p14",
+          "score": 0.0159
+        },
+        {
+          "chunk_id": "p334-p19-c1",
+          "page": "p334-p19",
+          "score": 0.0159
+        }
+      ],
+      "timings": {
+        "research_s": 4.007569700000204,
+        "generate_s": 4.414802999999665,
+        "total_s": 8.422372699999869
+      },
+      "searches": [
+        {
+          "query": "What is California's state income tax rate on capital gains?",
+          "chunk_ids": [
+            "p17-p9-c3",
+            "p17-p135-c3",
+            "p334-p19-c2",
+            "p587-p14-c4",
+            "p334-p19-c1"
+          ],
+          "fallback": true
+        }
+      ],
+      "stop_reason": "no_search",
+      "answerable_predicted": false,
+      "answer": "The provided sources do not mention California's state income tax rate on capital gains.",
+      "citations": [],
+      "usage": {
+        "input_tokens": 2348,
+        "output_tokens": 35
+      }
+    },
+    {
+      "id": "u03",
+      "question": "What will the standard mileage rate be for 2027?",
+      "answerable_expected": false,
+      "expected": "Not covered by these publications.",
+      "pages": [],
+      "retrieved": [
+        {
+          "chunk_id": "p463-p34-c3",
+          "page": "p463-p34",
+          "score": 0.0323
+        },
+        {
+          "chunk_id": "p463-p20-c3",
+          "page": "p463-p20",
+          "score": 0.0305
+        },
+        {
+          "chunk_id": "p463-p44-c5",
+          "page": "p463-p44",
+          "score": 0.0299
+        },
+        {
+          "chunk_id": "p463-p1-c2",
+          "page": "p463-p1",
+          "score": 0.0289
+        },
+        {
+          "chunk_id": "p334-p5-c1",
+          "page": "p334-p5",
+          "score": 0.0284
+        }
+      ],
+      "timings": {
+        "research_s": 4.038638500000161,
+        "generate_s": 4.967185800000152,
+        "total_s": 9.005824300000313
+      },
+      "searches": [
+        {
+          "query": "What will the standard mileage rate be for 2027?",
+          "chunk_ids": [
+            "p463-p34-c3",
+            "p463-p20-c3",
+            "p463-p44-c5",
+            "p463-p1-c2",
+            "p334-p5-c1"
+          ],
+          "fallback": true
+        }
+      ],
+      "stop_reason": "no_search",
+      "answerable_predicted": false,
+      "answer": "The provided sources do not contain information about the standard mileage rate for 2027.",
+      "citations": [],
+      "usage": {
+        "input_tokens": 2403,
+        "output_tokens": 37
+      }
+    },
+    {
+      "id": "u04",
+      "question": "What is the federal corporate income tax rate for C corporations?",
+      "answerable_expected": false,
+      "expected": "Not covered by these publications.",
+      "pages": [],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p139-c2",
+          "page": "p17-p139",
+          "score": 0.0164
+        },
+        {
+          "chunk_id": "p946-p13-c1",
+          "page": "p946-p13",
+          "score": 0.0164
+        },
+        {
+          "chunk_id": "p17-p125-c2",
+          "page": "p17-p125",
+          "score": 0.0161
+        },
+        {
+          "chunk_id": "p334-p39-c1",
+          "page": "p334-p39",
+          "score": 0.0161
+        },
+        {
+          "chunk_id": "p17-p134-c4",
+          "page": "p17-p134",
+          "score": 0.0159
+        }
+      ],
+      "timings": {
+        "research_s": 4.035036299999774,
+        "generate_s": 4.776127800000722,
+        "total_s": 8.811164100000497
+      },
+      "searches": [
+        {
+          "query": "What is the federal corporate income tax rate for C corporations?",
+          "chunk_ids": [
+            "p17-p139-c2",
+            "p946-p13-c1",
+            "p17-p125-c2",
+            "p334-p39-c1",
+            "p17-p134-c4"
+          ],
+          "fallback": true
+        }
+      ],
+      "stop_reason": "no_search",
+      "answerable_predicted": false,
+      "answer": "The provided sources do not mention the federal corporate income tax rate for C corporations.",
+      "citations": [],
+      "usage": {
+        "input_tokens": 2869,
+        "output_tokens": 34
+      }
+    },
+    {
+      "id": "u06",
+      "question": "How much can I contribute to a health savings account for 2025?",
+      "answerable_expected": false,
+      "expected": "Not covered by these publications.",
+      "pages": [],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p49-c1",
+          "page": "p17-p49",
+          "score": 0.0323
+        },
+        {
+          "chunk_id": "p17-p51-c1",
+          "page": "p17-p51",
+          "score": 0.0308
+        },
+        {
+          "chunk_id": "p17-p80-c1",
+          "page": "p17-p80",
+          "score": 0.0269
+        },
+        {
+          "chunk_id": "p17-p4-c4",
+          "page": "p17-p4",
+          "score": 0.0264
+        },
+        {
+          "chunk_id": "p17-p48-c1",
+          "page": "p17-p48",
+          "score": 0.0164
+        }
+      ],
+      "timings": {
+        "research_s": 5.993179600000076,
+        "generate_s": 5.071027599999979,
+        "total_s": 11.064207200000055
+      },
+      "searches": [
+        {
+          "query": "health savings account contribution limits 2025",
+          "chunk_ids": [
+            "p17-p49-c1",
+            "p17-p51-c1",
+            "p17-p80-c1",
+            "p17-p4-c4",
+            "p17-p48-c1"
+          ]
+        }
+      ],
+      "stop_reason": "done",
+      "answerable_predicted": false,
+      "answer": "The provided sources do not specify the contribution limits for health savings accounts (HSAs) for 2025. They mention contributions to health flexible spending arrangements (health FSAs) and Archer MSAs, but not HSAs.",
+      "citations": [],
+      "usage": {
+        "input_tokens": 4848,
+        "output_tokens": 93
+      }
+    },
+    {
+      "id": "u07",
+      "question": "When is Form 1120-S due for an S corporation?",
+      "answerable_expected": false,
+      "expected": "Not covered by these publications.",
+      "pages": [],
+      "retrieved": [
+        {
+          "chunk_id": "p17-p72-c5",
+          "page": "p17-p72",
+          "score": 0.0328
+        },
+        {
+          "chunk_id": "p946-p21-c3",
+          "page": "p946-p21",
+          "score": 0.0311
+        },
+        {
+          "chunk_id": "p17-p72-c4",
+          "page": "p17-p72",
+          "score": 0.0306
+        },
+        {
+          "chunk_id": "p946-p113-c3",
+          "page": "p946-p113",
+          "score": 0.0297
+        },
+        {
+          "chunk_id": "p17-p57-c2",
+          "page": "p17-p57",
+          "score": 0.0258
+        }
+      ],
+      "timings": {
+        "research_s": 4.052947899999708,
+        "generate_s": 5.036726400000589,
+        "total_s": 9.089674300000297
+      },
+      "searches": [
+        {
+          "query": "When is Form 1120-S due for an S corporation?",
+          "chunk_ids": [
+            "p17-p72-c5",
+            "p946-p21-c3",
+            "p17-p72-c4",
+            "p946-p113-c3",
+            "p17-p57-c2"
+          ],
+          "fallback": true
+        }
+      ],
+      "stop_reason": "no_search",
+      "answerable_predicted": false,
+      "answer": "The provided sources do not specify the due date for Form 1120-S for an S corporation.",
+      "citations": [],
+      "usage": {
+        "input_tokens": 2765,
+        "output_tokens": 40
+      }
+    },
+    {
+      "id": "u08",
+      "question": "What is the minimum wage in New York?",
+      "answerable_expected": false,
+      "expected": "Not covered by these publications.",
+      "pages": [],
+      "retrieved": [
+        {
+          "chunk_id": "p463-p11-c1",
+          "page": "p463-p11",
+          "score": 0.0277
+        },
+        {
+          "chunk_id": "p463-p44-c3",
+          "page": "p463-p44",
+          "score": 0.0164
+        },
+        {
+          "chunk_id": "p17-p89-c6",
+          "page": "p17-p89",
+          "score": 0.0164
+        },
+        {
+          "chunk_id": "p17-p49-c1",
+          "page": "p17-p49",
+          "score": 0.0161
+        },
+        {
+          "chunk_id": "p17-p87-c3",
+          "page": "p17-p87",
+          "score": 0.0161
+        }
+      ],
+      "timings": {
+        "research_s": 4.029113800000232,
+        "generate_s": 4.938254499999857,
+        "total_s": 8.96736830000009
+      },
+      "searches": [
+        {
+          "query": "What is the minimum wage in New York?",
+          "chunk_ids": [
+            "p463-p11-c1",
+            "p463-p44-c3",
+            "p17-p89-c6",
+            "p17-p49-c1",
+            "p17-p87-c3"
+          ],
+          "fallback": true
+        }
+      ],
+      "stop_reason": "no_search",
+      "answerable_predicted": false,
+      "answer": "The provided sources do not contain information about the minimum wage in New York.",
+      "citations": [],
+      "usage": {
+        "input_tokens": 2466,
+        "output_tokens": 34
+      }
+    },
+    {
+      "id": "u10",
+      "question": "How do I file a UK Self Assessment tax return?",
+      "answerable_expected": false,
+      "expected": "Not covered by these publications.",
+      "pages": [],
+      "retrieved": [
+        {
+          "chunk_id": "p334-p7-c2",
+          "page": "p334-p7",
+          "score": 0.0325
+        },
+        {
+          "chunk_id": "p334-p4-c4",
+          "page": "p334-p4",
+          "score": 0.0164
+        },
+        {
+          "chunk_id": "p17-p110-c1",
+          "page": "p17-p110",
+          "score": 0.0161
+        },
+        {
+          "chunk_id": "p334-p48-c2",
+          "page": "p334-p48",
+          "score": 0.0159
+        },
+        {
+          "chunk_id": "p17-p9-c1",
+          "page": "p17-p9",
+          "score": 0.0159
+        }
+      ],
+      "timings": {
+        "research_s": 3.998781300000701,
+        "generate_s": 5.092623899999126,
+        "total_s": 9.091405199999826
+      },
+      "searches": [
+        {
+          "query": "How do I file a UK Self Assessment tax return?",
+          "chunk_ids": [
+            "p334-p7-c2",
+            "p334-p4-c4",
+            "p17-p110-c1",
+            "p334-p48-c2",
+            "p17-p9-c1"
+          ],
+          "fallback": true
+        }
+      ],
+      "stop_reason": "no_search",
+      "answerable_predicted": false,
+      "answer": "The provided sources do not contain information on how to file a UK Self Assessment tax return. The sources are focused on US federal tax procedures and do not address UK tax procedures.",
+      "citations": [],
+      "usage": {
+        "input_tokens": 2259,
+        "output_tokens": 53
+      }
+    }
+  ]
+}

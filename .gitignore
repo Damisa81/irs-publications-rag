@@ -1,0 +1,21 @@
+# Private study notes, not part of the project
+RAG Project Guide.html
+
+# Generated: rebuilt by `py -m scripts.build_index` (the PDFs are public IRS downloads, see README)
+data/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Secrets: DATABASE_URL is read from the environment; never commit a .env file
+.env
+
+# Editors and OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
